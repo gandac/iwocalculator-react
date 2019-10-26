@@ -3,7 +3,6 @@ import {INITIAL_AMOUNT,INITIAL_PERIOD,INITIAL_INTEREST_RATE} from 'state/constan
 import constants from 'jest-haste-map/build/constants';
 
 const initialState = {
-    loading: true,
     amount : INITIAL_AMOUNT,
     period : INITIAL_PERIOD,
     rcfInterestRate: INITIAL_INTEREST_RATE,

@@ -16,7 +16,7 @@ const Slider = (props) => {
 
     const typeSettings = {
         amount : {
-            step: 10,
+            step: 100,
             formatLabel : val => `${CURRENCY_SYMBOL}${val}`
         },
         period : {

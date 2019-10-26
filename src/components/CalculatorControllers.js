@@ -3,24 +3,37 @@ import {connect} from 'react-redux';
 import {Grid} from 'semantic-ui-react';
 import InputPercent from 'components/InputPercent';
 import * as control from 'state/controls/controlsActions';
+import {calculateResult} from 'state/result/resultActions';
 import Slider from 'components/Slider';
 import './CalculatorControllers.scss';
 
 class CalculatorControllers extends React.Component {
 
+    //Event listeners if extra fine needed
     onAmountChange = (value) => {
         this.props.updateAmount(value);
+        this.props.calculateResult({amount:value});
     }
     onPeriodChange = (value) => {
         this.props.updatePeriod(value);
+        this.props.calculateResult({period:value});
     }
-
+    changeRCFRate = (e) => {
+        const value = e.target.value;
+        this.props.updateRCFInterest(value);
+        this.props.calculateResult({rcfInterestRate:value});
+    }
+    changeLoanRate = (e) => {
+        const value = e.target.value;
+        this.props.updateLoanInterest(e.target.value);
+        this.props.calculateResult({loanInterestRate:value});
+    }
 
     render (){
         const {config} = this.props;
         return (<div className="CalculatorControllers">
-            <Grid >
-                <Grid.Row columns={2} >
+            <Grid columns={2} >
+                <Grid.Row  >
                     <Grid.Column>
                     <Slider 
                     {...this.props.config.selectAmount}
@@ -39,8 +52,18 @@ class CalculatorControllers extends React.Component {
                   
                 </Grid.Row>
             <Grid.Row >
-                <Grid.Column><InputPercent type="rcf"/></Grid.Column>
-                <Grid.Column><InputPercent type="loan"/></Grid.Column>
+                <Grid.Column>
+                    <InputPercent 
+                    type="rcf"
+                    onChange={this.changeRCFRate}
+                    value={this.props.rcfRate}
+                    />
+                </Grid.Column>
+                <Grid.Column>
+                    <InputPercent type="loan"
+                    onChange={this.changeLoanRate}
+                    value={this.props.loanRate}/>
+                </Grid.Column>
             </Grid.Row>
            </Grid>
         </div>)
@@ -52,7 +75,7 @@ const mapStateToProps = state => {
         amount: state.controls.amount,
         period: state.controls.period,
         rcfRate : state.controls.rcfInterestRate,
-        loanRate: state.controls.loanRate,
+        loanRate: state.controls.loanInterestRate,
     }
 }
 const mapDispatchToProps = dispatch => {
@@ -61,6 +84,7 @@ const mapDispatchToProps = dispatch => {
         updatePeriod : (val) => dispatch(control.updatePeriod(val)),
         updateRCFInterest: (val) => dispatch(control.updateRCFInterest(val)),
         updateLoanInterest: (val) => dispatch(control.updateLoanInterest(val)),
+        calculateResult: (val) => dispatch(calculateResult(val)),
     }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(CalculatorControllers);

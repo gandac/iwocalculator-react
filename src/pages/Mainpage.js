@@ -26,17 +26,14 @@ class Page extends React.Component{
     render(){
         return ( 
             this.props.loading ? <Preloader /> : 
-            
-    
                 <div>
                     <CalculatorControllers 
-                    config = {this.props.config}/>
-                    
-                    <CalculatorResults />
-                </div>
-             
-                
-     
+                    config = {this.props.config}/>   
+                    {this.props.result.rcf ?
+                    <CalculatorResults
+                     result = {this.props.result}
+                    />: null }
+                </div> 
         )
     }
 }
@@ -45,7 +42,8 @@ class Page extends React.Component{
 const mapStateToProps = state => {
     return {
         loading: state.config.loading,
-        config: state.config
+        config: state.config,
+        result : state.result
     }
 }
 const mapDispatchToProps = dispatch => {
