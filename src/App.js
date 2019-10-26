@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from './components/Layout/Layout';
+import MainPage from './pages/Mainpage';
 import './App.css';
 
 // App Wrapper
@@ -7,7 +8,7 @@ import './App.css';
 function App() {
   return (
       <Layout>
-        {MainPage}
+        <MainPage />
       </Layout>
   );
 }
