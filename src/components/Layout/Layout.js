@@ -6,7 +6,7 @@ import Header from './Header';
 //Tiny High Order Component use for wrap all the pages with FlatBond Clothing
 const Layout = (props) => {
     return (
-        <Container text >
+        <Container >
             <Header />
             <main className="mainContent">
                 {props.children}
