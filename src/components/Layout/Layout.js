@@ -1,0 +1,18 @@
+import React from 'react';
+import { Container , Grid } from 'semantic-ui-react'
+import  './Layout.scss';
+import Header from './Header';
+
+//Tiny High Order Component use for wrap all the pages with FlatBond Clothing
+const Layout = (props) => {
+    return (
+        <Container text >
+            <Header />
+            <main className="mainContent">
+                {props.children}
+            </main>
+        </Container>
+    )
+}
+
+export default Layout;

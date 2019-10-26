@@ -3,7 +3,7 @@ import * as actionTypes from '../actionTypes';
 const initialState = {
     loading: true,
     selectAmount : false,
-    selectDuration : false,
+    selectPeriod : false,
     error: false
 }
 //Store each of the 3 states of the request [ request | success | error ]
@@ -19,12 +19,12 @@ const reducer = (state = initialState ,action) => {
             return {
                 ...state,
                 selectAmount:{
-                    min : action.revolving_credit_facility.amount_min,
-                    max : action.business_load.amount_max
+                    min : action.config.revolving_credit_facility.amount_min,
+                    max : action.config.business_loan.amount_max
                 },
-                selectDuration:{
-                    min : action.revolving_credit_facility.duration_min,
-                    max : action.business_load.duration_max
+                selectPeriod:{
+                    min : action.config.revolving_credit_facility.duration_min,
+                    max : action.config.business_loan.duration_max
                 },
                 loading: false
             }
