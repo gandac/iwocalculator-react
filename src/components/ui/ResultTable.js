@@ -29,7 +29,7 @@ const ResultTable = (props) => {
                     </Table.Row>
     
 
-    return (<Table >
+    return (<Table unstackable className="ResultsTable">
             <Table.Header>
                 <Table.Row>
                     <Table.HeaderCell>

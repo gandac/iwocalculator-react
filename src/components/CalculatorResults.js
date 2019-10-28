@@ -5,7 +5,7 @@ import './CalculatorResults.scss';
 
 
 const CalculatorResults = (props) => {
-    return (<Grid columns={2} className="CalculatorResults" >
+    return (<Grid stackable columns={2} className="CalculatorResults" >
         <Grid.Row  >
             <Grid.Column className="resultsColumn">
                 {
