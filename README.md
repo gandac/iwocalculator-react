@@ -43,7 +43,9 @@ I think that the whole project would need another 3-4hrs of love in order to fin
 
 That's why I've tagged the end of the 4hrs with a release tag : `0.1.0 Alpha - after 4hrs` because I think I could  finish the requirements and apply some proper styels to the view. You can always pull that release tag, to see where I was at 4hrs 
 
+## DEMO
 
+Demo link for the Project after 7hrs of work - [https://iwocalculator.web.app](https://iwocalculator.web.app) - Please pull the release tag alpha for the first 4hrs
 
 ## Available Scripts
 
