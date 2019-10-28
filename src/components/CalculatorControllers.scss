@@ -1,6 +1,21 @@
 .CalculatorControllers {
+
     .SliderWrapper{
+      position:relative;
         margin-top:3em;
+        .sliderRanges{
+          .limitBar{
+            background: rgba(106, 136, 255, 0.2);
+            position:absolute;
+            top:0;
+            height:4px;
+            &.loanBar{
+              background: rgba(198, 68, 61,0.2);
+              top: 10px;
+              left: auto;
+            }
+          }
+        }
     }
     .input-range__slider {
         appearance: none;
@@ -116,5 +131,24 @@
         font-weight: 600;
         color: #6a88ff;
     }
+
+    .ui.input .interestInput{
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      max-width:2em;
+      text-align: center;
+    }
+    .noBottomPadding{
+      padding-bottom:0!important;
+      .interestColumn{
+        background: rgba(106, 136, 255, 0.2);
+        padding-top:1em;
+        padding-bottom:1em;
+        &.loanColumn{
+          background: rgba(198, 68, 61,0.2);
+        }
+      }
+    }
+
       /*# sourceMappingURL=index.css.map */
 }

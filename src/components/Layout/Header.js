@@ -9,13 +9,12 @@ const Logo = (props) => {
 export default (props) => {
     return (
         <header>
-            <Container text>
-                <Grid padded >
-                    <Grid.Column>
-                        <Logo />
-                    </Grid.Column>
-                </Grid>
-            </Container>
+            <Grid padded >
+                <Grid.Column>
+                    <Logo />
+                </Grid.Column>
+              
+            </Grid>
         </header>
     )
 }

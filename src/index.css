@@ -1,8 +1,10 @@
 /* FONT CONFIG */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'Roboto Slab',-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,5 +19,6 @@ code {
 }
 
 h1,h2,h3,h4,h5{
-  font-family:"Untitled Serif";
+  font-family:"Roboto Slab";
+  font-weight: 700;
 }

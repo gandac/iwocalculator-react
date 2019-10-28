@@ -1,0 +1,9 @@
+.CalculatorResults{
+    .resultsColumn{
+        background: rgba(106, 136, 255, 0.2);
+        padding-bottom:1em;
+        &.loan{
+          background: rgba(198, 68, 61,0.2);
+        }
+      }
+}

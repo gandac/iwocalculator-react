@@ -1,8 +1,9 @@
 import React from 'react';
 import InputRange from 'react-input-range';
 import PropTypes from 'prop-types'
-import {Grid} from 'semantic-ui-react';
+import {numberWithCommas} from 'utils/utils';
 import {CURRENCY_SYMBOL} from 'state/constants';
+import SliderLimits from './ui/SliderLimits';
 
 // Slider.propTypes = {
 //     min: PropTypes.number,
@@ -17,7 +18,7 @@ const Slider = (props) => {
     const typeSettings = {
         amount : {
             step: 100,
-            formatLabel : val => `${CURRENCY_SYMBOL}${val}`
+            formatLabel : val => `${CURRENCY_SYMBOL}${numberWithCommas(val)}`
         },
         period : {
             step: 1,
@@ -34,9 +35,9 @@ const Slider = (props) => {
 
     return (
         <div className="SliderWrapper">
+            <SliderLimits limits={props.limits}/>
             <InputRange
             {...settings}
-           
                 />
         </div>
     )

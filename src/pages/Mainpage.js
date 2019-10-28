@@ -28,7 +28,9 @@ class Page extends React.Component{
             this.props.loading ? <Preloader /> : 
                 <div>
                     <CalculatorControllers 
-                    config = {this.props.config}/>   
+                    config = {this.props.config}
+                    display= {this.props.result.display}
+                    />   
                     {this.props.result.rcf ?
                     <CalculatorResults
                      result = {this.props.result}
