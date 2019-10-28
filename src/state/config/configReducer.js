@@ -20,11 +20,31 @@ const reducer = (state = initialState ,action) => {
                 ...state,
                 selectAmount:{
                     min : action.config.revolving_credit_facility.amount_min,
-                    max : action.config.business_loan.amount_max
+                    max : action.config.business_loan.amount_max,
+                    limits : {
+                        rcf:{
+                            min : action.config.revolving_credit_facility.amount_min,
+                            max : action.config.revolving_credit_facility.amount_max,
+                        },
+                        loan:{
+                            min : action.config.business_loan.amount_min,
+                            max : action.config.business_loan.amount_max,
+                        } 
+                    }
                 },
                 selectPeriod:{
                     min : action.config.revolving_credit_facility.duration_min,
-                    max : action.config.business_loan.duration_max
+                    max : action.config.business_loan.duration_max,
+                    limits : {
+                        rcf:{
+                            min : action.config.revolving_credit_facility.duration_min,
+                            max : action.config.revolving_credit_facility.duration_max,
+                        },
+                        loan:{
+                            min : action.config.business_loan.duration_min,
+                            max : action.config.business_loan.duration_max,
+                        } 
+                    }
                 },
                 loading: false
             }

@@ -12,7 +12,23 @@ const ResultTable = (props) => {
                 <Table.Cell>{el.total}</Table.Cell>
             </Table.Row>
         )
-    })
+    });
+
+    const footerTotals = props.data.reduce((acc,cur)=>{
+        return {
+            principal : acc.principal + cur.principal,
+            interest: acc.interest + cur.interest,
+            total : acc.total + cur.total
+        }
+    });
+    const footerHTML = <Table.Row>
+                        <Table.HeaderCell><strong>Total</strong></Table.HeaderCell>
+                        <Table.HeaderCell>{footerTotals.principal.toFixed(2)}</Table.HeaderCell>
+                        <Table.HeaderCell>{footerTotals.interest.toFixed(2)}</Table.HeaderCell>
+                        <Table.HeaderCell>{footerTotals.total.toFixed(2)}</Table.HeaderCell>
+                    </Table.Row>
+    
+
     return (<Table >
             <Table.Header>
                 <Table.Row>
@@ -33,6 +49,9 @@ const ResultTable = (props) => {
             <Table.Body>
                 {itemsHTML}
             </Table.Body>
+            <Table.Footer fullWidth>
+                {footerHTML}
+            </Table.Footer>
         </Table>
             )
 }

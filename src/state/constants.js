@@ -5,4 +5,6 @@ export const INITIAL_AMOUNT           = 5000; //pounds
 export const INITIAL_PERIOD           = 5; //months
 export const INITIAL_INTEREST_RATE    = 3; //percent
 export const CURRENCY_SYMBOL          = '£';
+export const BUSINESS_LOAN_UPFRONT_FEE_PERCENT = 10;
+
 
