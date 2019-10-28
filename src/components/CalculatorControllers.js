@@ -34,7 +34,7 @@ class CalculatorControllers extends React.Component {
         const {config,amount,period} = this.props;
 
         return (<div className="CalculatorControllers">
-            <Grid columns={2} centered>
+            <Grid stackable columns={2} centered>
  
                 <Grid.Row  >
                     <Grid.Column>
